@@ -13,30 +13,29 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Switch>
-          <AdminNavbar />
-          <div className="container mt-3">
-
+        <AdminNavbar />
+        <div className="container mt-3">
+          <Switch>
             <Route exact path={["/", "/admin"]} component={EmployeesList} />
             <Route exact path="/add" component={AddEmployee} />
             <Route path="/employee/edit/:id" component={Employee} />
             <Route path="/review/:id" component={Feedback} />
-          </div>
-          <nav className="navbar navbar-expand fixed-bottom navbar-dark bg-primary">
-            <div className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <Link to={"/admin"} className="nav-link">
-                  Admin View
+          </Switch>
+        </div>
+        <nav className="navbar navbar-expand fixed-bottom navbar-dark bg-primary">
+          <div className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <Link to={"/admin"} className="nav-link">
+                Admin View
              </Link>
-              </li>
-              <li className="nav-item">
-                <Link to={"/review/1"} className="nav-link">
-                  Employee View
+            </li>
+            <li className="nav-item">
+              <Link to={"/review/1"} className="nav-link">
+                Employee View
             </Link>
-              </li>
-            </div>
-          </nav>
-        </Switch>
+            </li>
+          </div>
+        </nav>
       </React.Fragment>
     );
   }
